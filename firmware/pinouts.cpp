@@ -13,6 +13,7 @@ static void setBoard_04_pinout() {
 	engineConfiguration->ignitionPins[1] = Gpio::E3;
 	engineConfiguration->ignitionPins[2] = Gpio::C13;
 	engineConfiguration->ignitionPins[3] = Gpio::E7;
+
 }
 
 static void setBoard_ua4c_pinout() {
@@ -25,14 +26,16 @@ static void setBoard_ua4c_pinout() {
 	engineConfiguration->ignitionPins[1] = Gpio::E4;
 	engineConfiguration->ignitionPins[2] = Gpio::D13;
 	engineConfiguration->ignitionPins[3] = Gpio::E5;
+
 }
 
 /*PUBLIC_API_WEAK*/ void boardTsAction(uint16_t index) {
-    if (index == 0) {
-        setBoard_04_pinout();
-    } else if (index == 1) {
-        setBoard_ua4c_pinout();
-    }
-    writeToFlashNow();
-    onApplyPreset();
+	if (index == 0) {
+		setBoard_04_pinout();
+	}
+	else if (index == 1) {
+		setBoard_ua4c_pinout();
+	}
+	writeToFlashNow();
+	onApplyPreset();
 }
