@@ -4884,8 +4884,8 @@ end</constant>
          100.0
 </constant>
     </page>
-    <versionInfo firmwareInfo="20250213" nPages="1" signature="rusEFI main.2025.02.17.mega100.1673125132" version="5.0"/>
-    <bibliography author="rusEFI 20250213" writeDate="date"/>
+    <versionInfo firmwareInfo="20250216" nPages="1" signature="rusEFI main.2025.02.17.mega100.1673125132" version="5.0"/>
+    <bibliography author="rusEFI 20250216" writeDate="date"/>
     <settings/>
     <userComments/>
 </msq>
