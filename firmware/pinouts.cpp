@@ -9,10 +9,10 @@ static void setBoard_04_pinout() {
 	engineConfiguration->injectionPins[2] = Gpio::B12;
 	engineConfiguration->injectionPins[3] = Gpio::B13;
 
-	// engineConfiguration->ignitionPins[0] = Gpio::E2;
-	// engineConfiguration->ignitionPins[1] = Gpio::E3;
-	// engineConfiguration->ignitionPins[2] = Gpio::C13;
-	// engineConfiguration->ignitionPins[3] = Gpio::E7;
+	engineConfiguration->ignitionPins[0] = Gpio::E2;
+	engineConfiguration->ignitionPins[1] = Gpio::E3;
+	engineConfiguration->ignitionPins[2] = Gpio::C13;
+	engineConfiguration->ignitionPins[3] = Gpio::E7;
 
 	// engineConfiguration->idle.solenoidPin = Gpio::D10;
 
@@ -38,10 +38,10 @@ static void setBoard_ua4c_pinout() {
 	engineConfiguration->injectionPins[2] = Gpio::D9;
 	engineConfiguration->injectionPins[3] = Gpio::D10;
 
-	// engineConfiguration->ignitionPins[0] = Gpio::E15;
-	// engineConfiguration->ignitionPins[1] = Gpio::E4;
-	// engineConfiguration->ignitionPins[2] = Gpio::D13;
-	// engineConfiguration->ignitionPins[3] = Gpio::E5;
+	engineConfiguration->ignitionPins[0] = Gpio::E15;
+	engineConfiguration->ignitionPins[1] = Gpio::E4;
+	engineConfiguration->ignitionPins[2] = Gpio::D13;
+	engineConfiguration->ignitionPins[3] = Gpio::E5;
 
 
 	// engineConfiguration->tachOutputPin = Gpio::C9;
