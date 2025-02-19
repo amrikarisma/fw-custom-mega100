@@ -8,7 +8,7 @@
 
 /* SPI storage */
 #define EFI_FLASH_SPI_CS_GPIO GPIOE
-#define EFI_FLASH_SPI_CS_PIN Gpio::E1
+#define EFI_FLASH_SPI_CS_PIN 1
 
 #define EFI_FLASH_SPI_AF 5U
 #define EFI_FLASH_SPI_SCK Gpio::B3
