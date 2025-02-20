@@ -14,7 +14,7 @@
 #define EFI_FLASH_SPI_SCK Gpio::B3
 #define EFI_FLASH_SPI_MISO Gpio::B4
 #define EFI_FLASH_SPI_MOSI Gpio::B5
-#define EFI_FLASH_SDPID SPID2
+#define EFI_FLASH_SDPID SPID1
 
 /* 8 Mbytes */
 /* Not used, just FYI */
