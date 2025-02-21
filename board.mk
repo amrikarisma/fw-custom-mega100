@@ -8,15 +8,26 @@ BOARDINC += $(BOARD_DIR)/generated/controllers/generated
 # defines SHORT_BOARD_NAME
 include $(BOARD_DIR)/meta-info.env
 
+
+# debug
+DEBUG_LEVEL_OPT = -O0 -ggdb -g
+
 # reduce memory usage monitoring
 DDEFS += -DRAM_UNUSED_SIZE=100
 
 # assign critical LED to a non-existent pin
-# DDEFS += -DLED_CRITICAL_ERROR_BRAIN_PIN=Gpio::I15
+DDEFS += -DLED_CRITICAL_ERROR_BRAIN_PIN=Gpio::B7
 
 # This board has 512K STM32F407
 DDEFS += -DMIN_FLASH_SIZE=512
+DDEFS += -DFLASH_ADDR=0x08075000
+DDEFS += -DBOARD_OTG_NOVBUSSENS
+DDEFS += -DSTM32_RTCPRE_VALUE=25
+DDEFS += -DHAL_USE_RTC=FALS
+DDEFS += -DEFI_STORAGE_INT_FLASH=FALSE
+
 DDEFS += -DEFI_LUA=FALSE
+DDEFS += -DEFI_HD44780_LCD=FALSE
 
 # This board has no storage
 DDEFS += -DEFI_FILE_LOGGING=FALSE
