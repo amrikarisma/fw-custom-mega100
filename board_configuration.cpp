@@ -19,6 +19,13 @@ void setBoardDefaultConfiguration() {
 	engineConfiguration->triggerInputPins[0] = Gpio::D3;
 	engineConfiguration->triggerInputPins[1] = Gpio::Unassigned;
 
+	engineConfiguration->isSdCardEnabled = true;
+	engineConfiguration->sdCardSpiDevice = SPI_DEVICE_3;
+	engineConfiguration->spi3mosiPin = Gpio::C12;
+	engineConfiguration->spi3misoPin = Gpio::C11;
+	engineConfiguration->spi3sckPin = Gpio::C10;
+	engineConfiguration->is_enabled_spi_3 = true;
+	engineConfiguration->sdCardCsPin = Gpio::D2;
 
 
 	// engineConfiguration->injectionPins[0] = Gpio::F13;
