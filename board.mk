@@ -10,16 +10,9 @@ BOARDINC += $(BOARD_DIR)/generated/controllers/generated
 include $(BOARD_DIR)/meta-info.env
 
 # reduce memory usage monitoring
-DDEFS += -DRAM_UNUSED_SIZE=100
-
-# assign critical LED to a non-existent pin
-DDEFS += -DLED_CRITICAL_ERROR_BRAIN_PIN=Gpio::Unassigned
+DDEFS += -DRAM_UNUSED_SIZE=4000
 
 
-# we do not have much Lua RAM, let's drop some fancy functions
-DDEFS += -DWITH_LUA_CONSUMPTION=FALSE
-DDEFS += -DWITH_LUA_PID=FALSE
-DDEFS += -DWITH_LUA_STOP_ENGINE=FALSE
 DDEFS += -DEFI_LUA=FALSE
 
 
@@ -33,6 +26,5 @@ DDEFS += -DEFI_FLASH_WRITE_THREAD=TRUE
 DDEFS += -DEFI_STORAGE_MFS_EXTERNAL=TRUE
 # Move persistentState out of CCM as it should be accessible by DMA
 DDEFS += -DPERSISTENT_LOCATION=""
-DDEFS += -DLUA_HEAD_RAM_SECTION=CCM_OPTIONAL
 
-DDEFS += -DMIN_FLASH_SIZE=512
+DDEFS += -DMIN_FLASH_SIZE=768
