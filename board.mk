@@ -10,11 +10,16 @@ BOARDINC += $(BOARD_DIR)/generated/controllers/generated
 include $(BOARD_DIR)/meta-info.env
 
 # reduce memory usage monitoring
-DDEFS += -DRAM_UNUSED_SIZE=4000
+DDEFS += -DRAM_UNUSED_SIZE=100
+
+# assign critical LED to a non-existent pin
+DDEFS += -DLED_CRITICAL_ERROR_BRAIN_PIN=Gpio::Unassigned
 
 
-DDEFS += -DEFI_LUA=FALSE
-
+# we do not have much Lua RAM, let's drop some fancy functions
+DDEFS += -DWITH_LUA_CONSUMPTION=FALSE
+DDEFS += -DWITH_LUA_PID=FALSE
+DDEFS += -DWITH_LUA_STOP_ENGINE=FALSE
 
 # This board uses ChibiOS MFS driver on external SPI flash
 include $(PROJECT_DIR)/hw_layer/ports/stm32/use_higher_level_flash_api.mk
@@ -22,11 +27,8 @@ include $(PROJECT_DIR)/hw_layer/ports/stm32/use_higher_level_flash_api.mk
 include $(PROJECT_DIR)/hw_layer/drivers/flash/w25q/w25q_single_spi.mk
 
 # Otherwise writeToFlashNow() is called from ISR context (slow timer callback)
-# only dual bank
-# DDEFS += -DEFI_FLASH_WRITE_THREAD=TRUE 
-
+DDEFS += -DEFI_FLASH_WRITE_THREAD=TRUE
 DDEFS += -DEFI_STORAGE_MFS_EXTERNAL=TRUE
 # Move persistentState out of CCM as it should be accessible by DMA
 DDEFS += -DPERSISTENT_LOCATION=""
-
-DDEFS += -DMIN_FLASH_SIZE=512
+DDEFS += -DLUA_HEAD_RAM_SECTION=CCM_OPTIONAL
